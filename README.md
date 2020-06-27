@@ -9,3 +9,6 @@ A reference implementation for a Spring Boot (gradle) REST API, with MongoDB run
 #### Without docker
 - Create a mongodb instance
 - `./gradlew bootJar`
+
+### Deploying in a local kubernetes cluster
+`sh run_kube.sh`

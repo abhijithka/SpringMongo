@@ -1,11 +1,11 @@
 version: '3.1'
 
 services:
-
   app:
-    build: ./
+    build: .
+    container_name: cricket_api
+    image: cricket_api
     restart: always
-    container_name: api
     ports:
       - 8080:8080
     depends_on:
