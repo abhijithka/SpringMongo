@@ -1,0 +1,38 @@
+# ... Service YAML definition
+apiVersion: v1
+kind: Service
+metadata:
+  name: cricket
+spec:
+  selector:
+    app: cricket
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
+
+---
+# ... Deployment YAML definition
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cricket
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cricket
+  template:
+    metadata:
+      labels:
+        app: cricket
+    spec:
+      containers:
+        - name: cricket
+          image: "cricketapi"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_URL
+              value: mongodb://mongo:27017/cricket
+          imagePullPolicy: Never
