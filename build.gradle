@@ -19,12 +19,21 @@ repositories {
 }
 
 dependencies {
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	implementation 'org.springdoc:springdoc-openapi-ui:1.4.0'
+	implementation 'org.springdoc:springdoc-openapi-security:1.4.0'
+
 	compileOnly 'org.projectlombok:lombok'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
